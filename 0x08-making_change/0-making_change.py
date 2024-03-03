@@ -20,4 +20,4 @@ def makeChange(coins, total):
             total -= coins[i]
             result.append(coins[i])
             i -= 1
-    return (i)
+    return (len(total))
