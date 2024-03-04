@@ -13,11 +13,18 @@ def makeChange(coins, total):
     """
 
     n = len(coins)
-    result = []
-    i = n - 1
-    while(i >= 0):
-        while (total >= coins[i]):
-            total -= coins[i]
-            result.append(coins[i])
-            i -= 1
-    return (len(total))
+    sub = list()
+
+    for i in range (total + 1):
+        sub.append(total +1)
+
+    for i in range(1, total + 1):
+        # For each coin we are given
+        for j in range(0, n):
+            if coins[j] <= i:
+                sub[i] = min(sub[i], sub[i - coins[j]] + 1)
+
+    if sub[total] > total:
+        return (-1)
+
+    return sub[total]
