@@ -15,7 +15,7 @@ def makeChange(coins, total):
     n = len(coins)
     sub = list()
 
-    for i in range (total + 1):
+    for i in range(total + 1):
         sub.append(total + 1)
     sub[0] = 0
 
