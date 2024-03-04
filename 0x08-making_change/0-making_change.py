@@ -9,14 +9,14 @@ def makeChange(coins, total):
     """
     Return: fewest number of coins needed to meet total
     If total is 0 or less, return 0
-    If total cannot be met by any number of coins you have, return -1
+    If total cannot be met by any number of coins you have, return (-1)
     """
 
     n = len(coins)
     sub = list()
 
     for i in range (total + 1):
-        sub.append(total +1)
+        sub.append(total + 1)
     sub[0] = 0
 
     for i in range(1, total + 1):
