@@ -12,6 +12,8 @@ def makeChange(coins, total):
     If total cannot be met by any number of coins you have, return (-1)
     """
 
+    if (total < 0):
+        return (-1)
     n = len(coins)
     sub = list()
 
