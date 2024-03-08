@@ -13,7 +13,6 @@ def island_perimeter(grid):
     Cells are connected horizontally/vertically (not diagonally).
     grid is rectangular, with its width and height not exceeding 100
     """
-
     length = len(grid)
     breath = len(grid[0])
     perim = 0
