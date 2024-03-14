@@ -26,7 +26,3 @@ def isWinner(x, nums):
     if winners['Maria'] == winners['Ben']:
         return None
     return max(winners, key=winners.get)
-
-
-if __name__ == "__main__":
-    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
