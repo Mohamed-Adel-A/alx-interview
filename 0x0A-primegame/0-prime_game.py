@@ -12,6 +12,7 @@ def sieve_of_eratosthenes(n):
         p += 1
     return [i for i in range(n+1) if primes[i]]
 
+
 def isWinner(x, nums):
     """Determine the winner of the prime game."""
     winners = {'Maria': 0, 'Ben': 0}
@@ -25,6 +26,7 @@ def isWinner(x, nums):
     if winners['Maria'] == winners['Ben']:
         return None
     return max(winners, key=winners.get)
+
 
 if __name__ == "__main__":
     print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
