@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ 0. Prime Game """
 
+
 def is_prime(num):
     """Implementation of the Sieve of Eratosthenes algorithm."""
     if num < 2:
@@ -9,6 +10,7 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
+
 
 def isWinner(x, nums):
     """Determine the winner of the prime game."""
