@@ -15,7 +15,8 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    # Create a list to store the minimum number of coins needed for each total from 0 to 'total'
+    # Create a list to store the minimum number of coins
+    # needed for each total from 0 to 'total'
     dp = [float('inf')] * (total + 1)
 
     # Base case: 0 coins needed for a total of 0
@@ -23,7 +24,8 @@ def makeChange(coins, total):
 
     # Iterate through each coin value
     for coin in coins:
-        # For each coin value, iterate through each total from 'coin' to 'total'
+        # For each coin value,
+        # iterate through each total from 'coin' to 'total'
         for sub_total in range(coin, total + 1):
             # Update the minimum number of coins needed for the current total
             dp[sub_total] = min(dp[sub_total], dp[sub_total - coin] + 1)
