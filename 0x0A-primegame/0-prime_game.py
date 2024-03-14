@@ -20,8 +20,14 @@ def isWinner(x, nums):
         return None
     wins = {'Maria': 0, 'Ben': 0}
     for n in nums:
-        prime_count = sum(1 for i in range(2, n + 1) if is_prime(i))
-        if prime_count % 2 == 0:
+        primes = [i for i in range(2, n + 1) if is_prime(i)]
+        moves = 0
+        for p in primes:
+            for i in range(p, n + 1, p):
+                if i in primes:
+                    primes.remove(i)
+                    moves += 1
+        if moves % 2 == 0:
             wins['Ben'] += 1
         else:
             wins['Maria'] += 1
