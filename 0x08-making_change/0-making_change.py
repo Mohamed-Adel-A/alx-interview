@@ -15,28 +15,23 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    # Create a dictionary to store computed results for different total amounts
-    memo = {}
+    # Create a list to store the minimum number of coins
+    # needed for each total from 0 to 'total'
+    dp = [float('inf')] * (total + 1)
 
-    def dp(target):
-        if target in memo:
-            return memo[target]
-        if target == 0:
-            return 0
-        if target < 0:
-            return float('inf')
+    # Base case: 0 coins needed for a total of 0
+    dp[0] = 0
 
-        min_coins = float('inf')
-        for coin in coins:
-            sub_result = dp(target - coin)
-            min_coins = min(min_coins, sub_result + 1)
+    # Iterate through each coin value
+    for coin in coins:
+        # For each coin value,
+        # iterate through each total from 'coin' to 'total'
+        for sub_total in range(coin, total + 1):
+            # Update the minimum number of coins needed for the current total
+            dp[sub_total] = min(dp[sub_total], dp[sub_total - coin] + 1)
 
-        memo[target] = min_coins
-        return min_coins
-
-    result = dp(total)
-
-    if result == float('inf'):
+    # If 'total' cannot be met by any combination of coins, return -1
+    if dp[total] == float('inf'):
         return -1
     else:
-        return result
+        return dp[total]
