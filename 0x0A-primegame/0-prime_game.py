@@ -1,29 +1,25 @@
 #!/usr/bin/python3
 """ 0. Prime Game """
 
-def sieve_of_eratosthenes(n):
+def is_prime(num):
     """Implementation of the Sieve of Eratosthenes algorithm."""
-    primes = [True] * (n+1)
-    primes[0] = primes[1] = False
-    p = 2
-    while p * p <= n:
-        if primes[p]:
-            for i in range(p * p, n+1, p):
-                primes[i] = False
-        p += 1
-    return [i for i in range(n+1) if primes[i]]
-
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
 
 def isWinner(x, nums):
     """Determine the winner of the prime game."""
-    winners = {'Maria': 0, 'Ben': 0}
+    wins = {'Maria': 0, 'Ben': 0}
     for n in nums:
-        primes = sieve_of_eratosthenes(n)
-        if len(primes) % 2 == 0:
-            winners['Ben'] += 1
+        primes_count = sum(1 for i in range(1, n + 1) if is_prime(i))
+        if primes_count % 2 == 0:
+            wins['Ben'] += 1
         else:
-            winners['Maria'] += 1
+            wins['Maria'] += 1
 
-    if winners['Maria'] == winners['Ben']:
+    if wins['Maria'] == wins['Ben']:
         return None
-    return max(winners, key=winners.get)
+    return max(wins, key=wins.get)
