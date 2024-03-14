@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" 0. Prime Game """
 
 def sieve_of_eratosthenes(n):
     """Implementation of the Sieve of Eratosthenes algorithm."""
