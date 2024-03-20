@@ -10,7 +10,7 @@ def pascal_triangle(n):
 
     Parameters:
         n (int): Number of rows to generate.
- 
+
     Returns:
         list of lists:
         Pascal's triangle represented as a list of lists of integers.
