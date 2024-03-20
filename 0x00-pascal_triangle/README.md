@@ -67,7 +67,12 @@ To successfully complete this project, you should revise the following Python co
 
 By revisiting these concepts, you will be well-prepared to tackle the challenges of implementing Pascal’s Triangle in Python, applying both your mathematical understanding and programming skills to develop an efficient and effective solution.
 
+
+## Tasks
+-------
 Score: 0.0% (Checks completed: 0.0%)
+
+### 0. Pascal's Triangle
 
 Create a function `def pascal_triangle(n):` that returns a list of lists of integers representing the Pascal’s triangle of `n`:
 
