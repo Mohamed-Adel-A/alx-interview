@@ -7,9 +7,6 @@ author:
 
 # Project: 0x00. Pascal's Triangle | ALX Africa Intranet
 
-> ## Excerpt
-> Score: 0.0% (Checks completed: 0.0%)
-
 ---
 
 Resources
