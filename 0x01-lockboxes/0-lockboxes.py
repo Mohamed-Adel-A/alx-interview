@@ -40,4 +40,3 @@ def canUnlockAll(boxes):
 
     # If all boxes have been visited, return True
     return len(visited) == len(boxes)
-  
